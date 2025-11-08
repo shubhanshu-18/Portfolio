@@ -1,0 +1,589 @@
+/* --- 1. Theme Variables & Global Styles --- */
+:root {
+    /* Default (Dark Mode) Theme */
+    --primary-highlight: #8A2BE2; /* Purple */
+    --background-color: #120a1a;
+    --card-background: rgba(45, 31, 63, 0.5);
+    --text-primary: #EAEAEA;
+    --text-secondary: #A9A9A9;
+    --border-color: rgba(138, 43, 226, 0.3);
+    --glow-color: rgba(138, 43, 226, 0.6);
+}
+/* --- Pre-loader --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color); /* Same as body background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Highest z-index to be on top */
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: var(--primary-highlight);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* The animation for the logo */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Class to hide the pre-loader */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+[data-theme="light"] {
+    /* Light Mode Theme */
+    --primary-highlight: #6A11CB; /* Darker purple for better contrast */
+    --background-color: #F4F7FC;
+    --card-background: #FFFFFF;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #E0E0E0;
+    --glow-color: rgba(106, 17, 203, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* --- Canvas Background --- */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Places it behind everything */
+}
+
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Header, Nav, and Theme Switch --- */
+header {
+    background-color: var(--background-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: border-color 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-highlight);
+}
+
+nav ul { list-style: none; margin: 0; padding: 0; }
+nav ul li { display: inline; margin-left: 25px; }
+nav a { color: var(--text-primary); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+nav a:hover { color: var(--primary-highlight); }
+
+/* --- Updated Theme Toggle Button Styles --- */
+#theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle-button:hover {
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+#theme-toggle-button svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-highlight);
+}
+
+/* Logic to show the correct icon */
+.icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .icon-moon {
+    display: block;
+}
+
+/* Adjust the responsive position if needed */
+@media (max-width: 768px) {
+    #theme-toggle-button {
+        position: absolute;
+        top: 1rem;
+        right: 20px;
+    }
+}
+
+
+/* --- 3. Page Sections (Hero, Intro, Work, etc.) --- */
+#hero { padding: 80px 0; text-align: center; }
+.hero-container { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.hero-image img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-highlight); box-shadow: 0 0 30px var(--glow-color); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.hero-text { text-align: left; }
+.hero-text h1 { font-size: 3.5rem; font-weight: 700; margin: 0; line-height: 1.2; }
+.hero-text .highlight { color: var(--primary-highlight); }
+.hero-text p { font-size: 1.2rem; color: var(--text-secondary); margin-top: 0; }
+.hero-text .subtitle { font-size: 1rem; margin-top: 10px; }
+
+#intro, #work, #contact { padding: 60px 0; }
+#intro h2, #work h2, #contact h2 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; }
+#intro p, #contact p { max-width: 700px; margin: 20px auto; font-size: 1.1rem; line-height: 1.8; text-align: center; color: var(--text-secondary); }
+
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+.work-card { background: var(--card-background); border: 1px solid var(--border-color); border-radius: 15px; padding: 25px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; }
+.work-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+.work-card h3 { color: var(--primary-highlight); margin-top: 0; }
+.work-card .card-link { display: inline-block; margin-top: 15px; color: var(--primary-highlight); text-decoration: none; font-weight: 600; }
+
+#contact p { margin-bottom: 30px; }
+.contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.contact-button { background: transparent; color: var(--primary-highlight); border: 2px solid var(--primary-highlight); padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: background-color 0.3s ease, color 0.3s ease; }
+.contact-button:hover { background-color: var(--primary-highlight); color: #fff; }
+
+footer { text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid var(--border-color); color: var(--text-secondary); transition: border-color 0.3s ease; }
+
+/* --- 4. Animations (Scroll & Typing) --- */
+.fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-section.visible { opacity: 1; transform: translateY(0); }
+#typed-text { color: var(--primary-highlight); }
+#typed-text::after { content: '|'; display: inline; margin-left: 5px; animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* --- 5. Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    header .container { flex-wrap: wrap; justify-content: center; }
+    .theme-switch-container { position: absolute; top: 1.2rem; right: 20px; }
+}
+
+/* --- Skills Section --- */
+#skills {
+    padding: 60px 0;
+    background-color: var(--background-color); /* Ensures theme change */
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--glow-color);
+}
+
+.skill-card .skill-icon {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-highlight);
+}
+
+.skill-card .skill-name {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* --- Back to Top Button --- */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-highlight);
+    color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+#back-to-top svg {
+    width: 28px;
+    height: 28px;
+}
+
+
+/* --- Advanced Hover & Mouse Effects --- */
+
+/* 1. Spotlight / Aurora Effect */
+#spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: none;
+    border-radius: 50%;
+    pointer-events: none; /* Allows clicks to go through it */
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth size changes */
+    z-index: 0; /* Places it behind content but above background */
+}
+
+/* Make sure content is layered on top of the spotlight */
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. 3D Tilt Effect on Cards */
+.work-card, .skill-card {
+    /* Set perspective on the parent for 3D effect */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* --- GitHub Stats Section --- */
+#github-stats .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+#github-stats .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-highlight);
+    margin: 0;
+}
+
+#github-stats .stat-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* --- Journey Timeline Section --- */
+#journey {
+    padding: 60px 0;
+}
+
+#journey h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The central timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--primary-highlight);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* The circle on the timeline */
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--primary-highlight);
+    border: 4px solid var(--background-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place items on the left */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 70px; /* spacing from center line */
+    text-align: right;
+}
+
+/* Place items on the right */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Adjust dot position for left and right items */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    position: relative;
+    border-radius: 8px;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--primary-highlight);
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px; /* Move line to the left */
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left; /* Align all text to the left */
+    }
+    .timeline-dot {
+        left: 10px; /* Move all dots to the left line */
+    }
+}
+/* --- Journey Timeline Section (Corrected) --- */
+#journey {
+    padding: 60px 0;
+}
+
+#journey h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The central timeline line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--primary-highlight);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* --- FIX: Correct positioning for left and right items --- */
+
+/* Position LEFT items */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 30px;
+}
+
+/* Position RIGHT items */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 30px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: left; /* Ensures text inside the box is always aligned left */
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--primary-highlight);
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+/* --- FIX: Correct positioning for the dots --- */
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-highlight);
+    border: 4px solid var(--background-color);
+    top: 32px; /* Adjusted for better vertical centering */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Dot for LEFT items */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+    transform: translateX(50%); /* Perfectly centers the dot on the line */
+}
+
+/* Dot for RIGHT items */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+    transform: translateX(-50%); /* Perfectly centers the dot on the line */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px;
+        transform: translateX(0);
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding: 10px 0 10px 50px; /* Simplified padding */
+    }
+
+    /* Override alternating desktop styles */
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    /* Move all dots to the left line */
+    .timeline-dot {
+        left: 10px;
+        transform: translateX(0);
+    }
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 10px;
+        transform: translateX(0);
+    }
+}
+
+
+

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhanshu Tripathi - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhanshu Tripathi - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- START: Add This Line for the Favicon -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="15" fill="%238A2BE2"></rect><text x="50" y="50" font-size="50" font-family="Poppins, sans-serif" font-weight="700" fill="white" text-anchor="middle" dy=".3em">ST</text></svg>'>
+    <!-- END: Favicon -->
+
+
+
+
+</head>
+<body>
+
+    
+    <!-- START: New Pre-loader -->
+    <div id="preloader">
+        <div class="loader-logo">ST</div>
+    </div>
+    <!-- END: New Pre-loader -->
+
+    <canvas id="particle-canvas"></canvas>
+    <!-- ... rest of your body content ... -->
+
+    
+    <!-- START: New Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+    <!-- END: New Canvas Background -->
+
+    
+
+
+    <header>
+    <div class="container">
+        <div class="logo">ST</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#intro">About</a></li>
+                <li><a href="#work">Work</a></li>
+            </ul>
+        </nav>
+
+        <!-- START: Updated Theme Toggle with Icons -->
+        <button id="theme-toggle-button">
+           <!-- The Sun Icon (Remains the Same) -->
+<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <!-- ... path data for the sun icon ... -->
+    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.592a.75.75 0 01-1.06-1.061l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.836 17.836a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75-.75zM5.106 17.836a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.167a.75.75 0 010-1.06z" />
+</svg>
+
+<!-- START: Replace the old moon icon with this new one -->
+<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8z" />
+    <path d="M12 2.25a.75.75 0 01.75.75v.01a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM18.894 6.106a.75.75 0 010 1.06l-.008.007a.75.75 0 01-1.06-1.06l.007-.008a.75.75 0 011.061 0zM21.75 12a.75.75 0 01-.75.75h-.01a.75.75 0 010-1.5h.01a.75.75 0 01.75.75zM18.886 17.894a.75.75 0 011.06-1.06l.008.007a.75.75 0 01-1.06 1.06l-.007-.008zM12 21.75a.75.75 0 01-.75-.75v-.01a.75.75 0 011.5 0v.01a.75.75 0 01-.75.75zM5.106 17.894a.75.75 0 010-1.06l.007-.008a.75.75 0 011.06 1.06l-.008.007a.75.75 0 01-1.06 0zM2.25 12a.75.75 0 01.75-.75h.01a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM5.114 6.106a.75.75 0 011.06 0l.007.008a.75.75 0 01-1.06 1.06l-.008-.007a.75.75 0 010-1.06z" />
+</svg>
+
+
+<div id="spotlight"></div>
+
+        </button>
+        <!-- END: Updated Theme Toggle -->
+    </div>
+</header>
+
+
+    <main>
+        <section id="hero">
+            <!-- Your hero section content remains the same -->
+             <div class="container hero-container">
+                <div class="hero-image">
+                    <img src="photos/profile.jpg" alt="Shubhanshu Tripathi">
+                </div>
+                <div class="hero-text">
+                    <p>A Developer who...</p>
+                    <h1>Judges a book<br>by its <span class="highlight">cover...</span></h1>
+                    <p class="subtitle">Because a great interface is where the story begins.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faded-in Section -->
+<section id="intro" class="fade-in-section">
+    <div class="container">
+        <!-- The h2 is now split to allow for the typing effect -->
+        <h2>I'm a <span id="typed-text"></span></h2>
+        <p>A student at <strong>IIIT Bhopal</strong>, I build meaningful and delightful digital products. I am currently honing my skills in C, web development, and data structures to create an equilibrium between user needs and business goals.</p>
+    </div>
+        <!-- ... End of your "Intro" section ... -->
+        </section>
+
+                <!-- ... after your intro section ... -->
+        </section>
+
+        <!-- START: New Journey Timeline Section -->
+        <section id="journey">
+            <div class="container">
+                <h2>My Journey</h2>
+                <div class="timeline-container">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item fade-in-section">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2025 - The Adventure Begins</h3>
+                            <p>Started my B.Tech journey at the Indian Institute of Information Technology (IIIT), Bhopal. Dived deep into the foundational principles of engineering and computer science.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item fade-in-section">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Late 2025 - Mastering C</h3>
+                            <p>Focused heavily on C programming, building a strong logical foundation by solving complex problems and creating pattern programs. This became the bedrock of my coding skills.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item fade-in-section">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Present - Building for the Web</h3>
+                            <p>Began exploring web development, learning HTML, CSS, and JavaScript to build dynamic, interactive experiences. This very portfolio is a product of that exploration!</p>
+                        </div>
+                    </div>
+                    <!-- Add more items here as your journey continues -->
+                </div>
+            </div>
+        </section>
+        <!-- END: New Journey Timeline Section -->
+
+        <section id="skills" class="fade-in-section">
+        <!-- ... your skills section starts here ... -->
+
+
+        <!-- START: New Skills Section -->
+        <section id="skills" class="fade-in-section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <!-- Skill 1: C -->
+                    <div class="skill-card">
+                        <p class="skill-icon">C++</p>
+                        <p class="skill-name">C++ Language</p>
+                    </div>
+                    <!-- Skill 2: HTML -->
+                    <div class="skill-card">
+                         <p class="skill-icon">HTML</p>
+                        <p class="skill-name">HTML5</p>
+                    </div>
+                    <!-- Skill 3: CSS -->
+                    <div class="skill-card">
+                         <p class="skill-icon">CSS</p>
+                        <p class="skill-name">CSS3</p>
+                    </div>
+                    <!-- Skill 4: JavaScript -->
+                    <div class="skill-card">
+                         <p class="skill-icon">JS</p>
+                        <p class="skill-name">JavaScript</p>
+                    </div>
+                    <!-- Add more skills as you learn them -->
+                </div>
+            </div>
+        </section>
+        <!-- END: New Skills Section -->
+
+                <!-- ... after your skills section ... -->
+        </section>
+
+        <!-- START: New GitHub Stats Section -->
+        <section id="github-stats" class="fade-in-section">
+            <div class="container">
+                <h2>My GitHub Activity</h2>
+                <div id="github-stats-grid" class="skills-grid">
+                    <!-- Stats will be dynamically inserted here by JavaScript -->
+                    <div class="skill-card">Loading...</div>
+                </div>
+            </div>
+        </section>
+        <!-- END: New GitHub Stats Section -->
+
+        <section id="work" class="fade-in-section">
+        <!-- ... your work section starts here ... -->
+
+
+        <section id="work" class="fade-in-section">
+        <!-- ... Your "Work" section starts here ... -->
+
+
+
+        <!-- Added 'fade-in-section' class -->
+        <section id="work" class="fade-in-section">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="work-grid">
+                    <!-- Project Cards -->
+                    <div class="work-card">
+                        <h3>Project Title 1</h3>
+                        <p>A brief description of the project and the technologies used.</p>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                    <div class="work-card">
+                        <h3>Project Title 2</h3>
+                        <p>A brief description of the project and the technologies used.</p>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                    <div class="work-card">
+                        <h3>Project Title 3</h3>
+                        <p>A brief description of the project and the technologies used.</p>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Added 'fade-in-section' class -->
+        <section id="contact" class="fade-in-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>I'm always open to connecting and discussing new projects or opportunities. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/shubhanshu__18_/" target="_blank" class="contact-button">Instagram</a>
+                    <a href="mailto:shubhtripathi1438@gmail.com" class="contact-button">Gmail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Your footer remains the same -->
+        <div class="container">
+            <p>&copy; 2025 Shubhanshu Tripathi. Inspired by modern design.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+
+        
+    // --- 1. Pre-loader Hiding Logic ---
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+        if (preloader) {
+            preloader.classList.add('hidden');
+        }
+    });
+
+    
+
+
+    // --- 1. Scroll Fade-In Animation ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+    const hiddenElements = document.querySelectorAll('.fade-in-section');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+
+    // --- This runs after the page content has loaded ---
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- 2. Typing Animation ---
+        const typedTextSpan = document.getElementById('typed-text');
+        if (typedTextSpan) { // Only run if the element exists
+            const textArray = ["Software Engineer.", "Web Developer.", "C Programmer."];
+            const typingDelay = 150;
+            const erasingDelay = 100;
+            const newTextDelay = 2000;
+            let textArrayIndex = 0;
+            let charIndex = 0;
+
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } else {
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } else {
+                    textArrayIndex++;
+                    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                    setTimeout(type, typingDelay + 1100);
+                }
+            }
+            setTimeout(type, newTextDelay + 250);
+        }
+
+        // --- 3. Light/Dark Mode Theme Toggle ---
+        const themeToggleButton = document.getElementById('theme-toggle-button');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+
+        themeToggleButton.addEventListener('click', function() {
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // --- 4. Back to Top Button ---
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) { // Only run if the button exists
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+                // --- 7. Interactive Canvas Background ---
+        const canvas = document.getElementById('particle-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particlesArray;
+
+            // Mouse position
+            const mouse = {
+                x: null,
+                y: null,
+                radius: (canvas.height / 80) * (canvas.width / 80)
+            };
+
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+
+            // Particle class
+            class Particle {
+                constructor(x, y, directionX, directionY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.directionX = directionX;
+                    this.directionY = directionY;
+                    this.size = size;
+                    this.color = color;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = 'rgba(138, 43, 226, 0.5)'; // Use a subtle theme color
+                    ctx.fill();
+                }
+
+                update() {
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.directionX = -this.directionX;
+                    }
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.directionY = -this.directionY;
+                    }
+
+                    // Check for mouse collision
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius + this.size) {
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                            this.x += 5;
+                        }
+                        if (mouse.x > this.x && this.x > this.size * 10) {
+                            this.x -= 5;
+                        }
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                            this.y += 5;
+                        }
+                        if (mouse.y > this.y && this.y > this.size * 10) {
+                            this.y -= 5;
+                        }
+                    }
+
+                    this.x += this.directionX;
+                    this.y += this.directionY;
+                    this.draw();
+                }
+            }
+
+            // Create particle array
+            function init() {
+                particlesArray = [];
+                let numberOfParticles = (canvas.height * canvas.width) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = (Math.random() * 2) + 1;
+                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let directionX = (Math.random() * .4) - .2;
+                    let directionY = (Math.random() * .4) - .2;
+                    let color = 'rgba(138, 43, 226, 0.5)';
+
+                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                }
+                connect();
+            }
+
+            // Check if particles are close enough to draw a line between them
+            function connect() {
+                let opacityValue = 1;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                            opacityValue = 1 - (distance / 20000);
+                            ctx.strokeStyle = `rgba(138, 43, 226, ${opacityValue})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Resize event
+            window.addEventListener('resize', () => {
+                canvas.width = innerWidth;
+                canvas.height = innerHeight;
+                mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+                init();
+            });
+
+            // Mouse out event
+            window.addEventListener('mouseout', () => {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            });
+            
+            init();
+            animate();
+        }
+
+                // --- 8. GitHub Stats Fetcher ---
+        const githubUsername = "shubhanshu-18"; // **<-- CHANGE THIS**
+        const githubGrid = document.getElementById('github-stats-grid');
+
+        if (githubUsername && githubGrid) {
+            fetch(`https://api.github.com/users/${githubUsername}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Clear the "Loading..." message
+                    githubGrid.innerHTML = '';
+
+                    // Create card for Public Repos
+                    const reposCard = document.createElement('div');
+                    reposCard.className = 'skill-card';
+                    reposCard.innerHTML = `
+                        <p class="stat-value">${data.public_repos || 0}</p>
+                        <p class="stat-label">Public Repos</p>
+                    `;
+                    githubGrid.appendChild(reposCard);
+
+                    // Create card for Followers
+                    const followersCard = document.createElement('div');
+                    followersCard.className = 'skill-card';
+                    followersCard.innerHTML = `
+                        <p class="stat-value">${data.followers || 0}</p>
+                        <p class="stat-label">Followers</p>
+                    `;
+                    githubGrid.appendChild(followersCard);
+                })
+                .catch(error => {
+                    console.error("Failed to fetch GitHub user data:", error);
+                    githubGrid.innerHTML = '<div class="skill-card"><p class="stat-label">Could not load stats</p></div>';
+                });
+
+            // Fetch top repositories
+            fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=2`)
+                .then(response => response.json())
+                .then(repos => {
+                    repos.forEach(repo => {
+                        const repoCard = document.createElement('div');
+                        repoCard.className = 'skill-card';
+                        repoCard.innerHTML = `
+                            <p class="stat-label" style="font-size: 1rem; color: var(--primary-highlight);">${repo.name}</p>
+                            <p class="stat-label">${repo.language || 'N/A'}</p>
+                        `;
+                        githubGrid.appendChild(repoCard);
+                    });
+                })
+                .catch(error => console.error("Failed to fetch GitHub repos:", error));
+        }
+
+        
+    });
+</script>
+
+
+
+<a href="#" id="back-to-top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.97 4.97a.75.75 0 011.06 0l6 6a.75.75 0 01-1.06 1.06L13.5 6.56V21a.75.75 0 01-1.5 0V6.56L6.97 12.03a.75.75 0 01-1.06-1.06l6-6z" />
+        </svg>
+    </a>
+
+
+
+</body>
+</html>
