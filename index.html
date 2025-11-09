@@ -23,6 +23,10 @@
 <body>
 
     
+    <!-- START: New Header Trigger -->
+    <div id="header-trigger-area"></div>
+    <!-- END: New Header Trigger -->
+
     <!-- START: New Pre-loader -->
     <div id="preloader">
         <div class="loader-logo">ST</div>
@@ -79,7 +83,7 @@
             <!-- Your hero section content remains the same -->
              <div class="container hero-container">
                 <div class="hero-image">
-                    <img src="https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg" alt="Shubhanshu Tripathi">
+                    <img src="https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg" alt="Shubhanshu Tripathi">                 
                 </div>
                 <div class="hero-text">
                     <p>A Developer who...</p>
@@ -93,7 +97,7 @@
 <section id="intro" class="fade-in-section">
     <div class="container">
         <!-- The h2 is now split to allow for the typing effect -->
-        <h2>I'm  <span id="typed-text"></span></h2>
+        <h2>I'm a <span id="typed-text"></span></h2>
         <p>A student at <strong>IIIT Bhopal</strong>, I build meaningful and delightful digital products. I am currently honing my skills in C, web development, and data structures to create an equilibrium between user needs and business goals.</p>
     </div>
         <!-- ... End of your "Intro" section ... -->
@@ -108,6 +112,16 @@
                 <h2>My Journey</h2>
                 <div class="timeline-container">
                     <!-- Timeline Item 1 -->
+                     <!-- START: New Scholastic Record Card -->
+<div class="timeline-item fade-in-section">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+        <h3>2021-24 Scholastic Record</h3>
+        <p>I established a strong academic foundation at St. Joseph's Convent School, achieving 96% in 10th grade and 89.8% in 12th grade, demonstrating a consistent ability to excel.</p>
+    </div>
+</div>
+<!-- END: New Scholastic Record Card -->
+
                     <div class="timeline-item fade-in-section">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -119,8 +133,8 @@
                     <div class="timeline-item fade-in-section">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h3>Late 2025 - Mastering C</h3>
-                            <p>Focused heavily on C programming, building a strong logical foundation by solving complex problems and creating pattern programs. This became the bedrock of my coding skills.</p>
+                            <h3>Late 2025 - Mastering C++</h3>
+                            <p>Focused heavily on C++ programming, building a strong logical foundation by solving complex problems and creating pattern programs. This became the bedrock of my coding skills.</p>
                         </div>
                     </div>
                     <!-- Timeline Item 3 -->
@@ -149,7 +163,7 @@
                     <!-- Skill 1: C -->
                     <div class="skill-card">
                         <p class="skill-icon">C++</p>
-                        <p class="skill-name">DSA</p>
+                        <p class="skill-name">C++ Language</p>
                     </div>
                     <!-- Skill 2: HTML -->
                     <div class="skill-card">
@@ -275,7 +289,7 @@
         // --- 2. Typing Animation ---
         const typedTextSpan = document.getElementById('typed-text');
         if (typedTextSpan) { // Only run if the element exists
-            const textArray = ["Shubhanshu Tripathi.","a Software Engineer.", "a Web Developer.", "a Programmer."];
+            const textArray = ["Software Engineer.", "Web Developer.", "C Programmer."];
             const typingDelay = 150;
             const erasingDelay = 100;
             const newTextDelay = 2000;
@@ -529,6 +543,23 @@
                 .catch(error => console.error("Failed to fetch GitHub repos:", error));
         }
 
+                // --- 9. Auto-Hiding Header ---
+        const header = document.querySelector('header');
+        const headerTrigger = document.getElementById('header-trigger-area');
+
+        if (header && headerTrigger) {
+            // Show header when mouse enters the trigger area
+            headerTrigger.addEventListener('mouseenter', () => {
+                header.classList.add('visible');
+            });
+
+            // Hide header when mouse leaves the header itself
+            header.addEventListener('mouseleave', () => {
+                header.classList.remove('visible');
+            });
+        }
+
+
         
     });
 </script>
@@ -545,17 +576,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
