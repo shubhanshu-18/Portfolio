@@ -92,21 +92,52 @@ body {
 }
 
 /* --- 2. Header, Nav, and Theme Switch --- */
-header {
-    background-color: var(--background-color);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
+/* --- Auto-Hiding Header --- */
+
+/* The invisible trigger area at the top */
+#header-trigger-area {
+    position: fixed;
     top: 0;
-    z-index: 100;
-    transition: border-color 0.3s ease;
+    left: 0;
+    width: 100%;
+    height: 30px; /* How sensitive the hover area is */
+    z-index: 1000; /* Make sure it's on top */
 }
 
+/* The header itself - positioned OFF-SCREEN initially */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--card-background); /* Give it a solid background */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Below the trigger, but above content */
+    
+    /* The starting position is off-screen */
+    transform: translateY(-100%);
+    
+    /* Smooth transition for the slide-in/out animation */
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* When the header should be visible, slide it into view */
+header.visible {
+    transform: translateY(0);
+}
+
+/* The container inside the header (no major changes needed here) */
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 .logo {
     font-weight: 700;
@@ -475,6 +506,7 @@ header, main, footer {
 }
 
 /* The central timeline line */
+
 .timeline-container::after {
     content: '';
     position: absolute;
@@ -483,9 +515,20 @@ header, main, footer {
     top: 0;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 0;
+
+    /* --- START: New Animation Properties --- */
+    /* Start with the line scaled to zero height */
+    transform: translateX(-50%) scaleY(0); 
+    
+    /* Animate from the top down */
+    transform-origin: top; 
+    
+    /* Define the smooth animation */
+    transition: transform 1.5s cubic-bezier(0.82, 0, 0.18, 1);
+    /* --- END: New Animation Properties --- */
 }
+
 
 .timeline-item {
     padding: 10px 0;
@@ -584,41 +627,6 @@ header, main, footer {
         transform: translateX(0);
     }
 }
-
-.timeline-dot {
-    animation: pulseDot 1.8s infinite alternate;
-}
-@keyframes pulseDot {
-    from {
-        box-shadow: 0 0 0 0 rgba(138,43,226,0.2), 0 0 8px 2px rgba(138,43,226,0.22);
-        opacity: 1;
-    }
-    to {
-        box-shadow: 0 0 0 6px rgba(138,43,226,0.09), 0 0 20px 4px rgba(138,43,226,0.3);
-        opacity: 0.95;
-    }
-}
-.timeline-content {
-    position: relative;
-}
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    left: -10px; top: 22px; bottom: 22px;
-    width: 5px;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #8a2be2 80%, #fff 100%);
-    opacity: 0.6;
-}
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-    transition: opacity 0.8s, transform 0.6s cubic-bezier(.19,1,.22,1);
-}
-.fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
 /* --- Navigation Link Hover Effect --- */
 
 /* First, prepare the link itself to be a container */
@@ -657,9 +665,3 @@ header nav ul li a:hover::after {
 header nav ul li a:hover {
     color: var(--primary-highlight);
 }
-
-
-
-
-
-
