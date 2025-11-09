@@ -619,6 +619,45 @@ header, main, footer {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+/* --- Navigation Link Hover Effect --- */
+
+/* First, prepare the link itself to be a container */
+header nav ul li a {
+    position: relative; /* This is essential for the underline to position itself correctly */
+    padding: 5px 0;   /* Adds some space so the line isn't too close */
+    text-decoration: none; /* Ensure no default underline */
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* Create the underline using a pseudo-element */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-highlight);
+    bottom: 0;
+    left: 0;
+    
+    /* Start with the line scaled to zero (invisible) */
+    transform: scaleX(0);
+    transform-origin: center; /* The animation will grow from the center */
+    
+    /* Add a smooth transition for the animation */
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* On hover, scale the line to its full width */
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Optional: Make the text slightly brighter on hover too */
+header nav ul li a:hover {
+    color: var(--primary-highlight);
+}
+
 
 
 
