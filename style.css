@@ -585,5 +585,42 @@ header, main, footer {
     }
 }
 
+.timeline-dot {
+    animation: pulseDot 1.8s infinite alternate;
+}
+@keyframes pulseDot {
+    from {
+        box-shadow: 0 0 0 0 rgba(138,43,226,0.2), 0 0 8px 2px rgba(138,43,226,0.22);
+        opacity: 1;
+    }
+    to {
+        box-shadow: 0 0 0 6px rgba(138,43,226,0.09), 0 0 20px 4px rgba(138,43,226,0.3);
+        opacity: 0.95;
+    }
+}
+.timeline-content {
+    position: relative;
+}
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px; top: 22px; bottom: 22px;
+    width: 5px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #8a2be2 80%, #fff 100%);
+    opacity: 0.6;
+}
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.8s, transform 0.6s cubic-bezier(.19,1,.22,1);
+}
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+
 
 
